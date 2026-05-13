@@ -23,7 +23,7 @@ public class NoteUI : MonoBehaviour
     void Update()
     {
  
-        if (notePanel.activeSelf && Input.GetKeyDown(KeyCode.E))
+        if (notePanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
             CloseNote();
     }
 
