@@ -15646,7 +15646,7 @@ MonoBehaviour:
   momentType: 4
   horrorSprite: {fileID: 21300000, guid: 6e1648d7b3b1c60499b0f81c5cdcc3ef, type: 3}
   horrorSound: {fileID: 8300000, guid: b44656900e28ad54292530b24cc74111, type: 3}
-  soundVolume: 40
+  soundVolume: 25
   narrationText: "\u0E40\u0E2B\u0E49\u0E22\u0E22\u0E22 \u0E44\u0E2D\u0E40x\u0E35\u0E49\u0E22\u0E22\u0E22!!"
   triggerOnce: 1
   delayBeforeTrigger: 0
