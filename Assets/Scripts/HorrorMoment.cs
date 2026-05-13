@@ -1,0 +1,76 @@
+using UnityEngine;
+
+public class HorrorMoment : MonoBehaviour
+{
+    [Header("ประเภท Moment")]
+    public MomentType momentType;
+
+    public enum MomentType
+    {
+        FlashImage,      // แฟลชภาพ
+        BlackFlash,      // หน้าจอมืดวูบ
+        Narration,       // ข้อความในใจ
+        SoundOnly,       // เสียงอย่างเดียว
+        Combined         // หลายอย่างพร้อมกัน
+    }
+
+    [Header("ภาพ")]
+    public Sprite horrorSprite;
+
+    [Header("เสียง")]
+    public AudioClip horrorSound;
+    public float soundVolume = 1f;
+
+    [Header("ข้อความ")]
+    [TextArea(3, 6)]
+    public string narrationText;
+
+    [Header("ตัวเลือก")]
+    public bool triggerOnce = true;     // ทำงานครั้งเดียว
+    public float delayBeforeTrigger = 0f; // หน่วงเวลาก่อน trigger
+
+    private bool hasTriggered = false;
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Player")) return;
+        if (triggerOnce && hasTriggered) return;
+
+        hasTriggered = true;
+
+        if (delayBeforeTrigger > 0)
+            Invoke("TriggerMoment", delayBeforeTrigger);
+        else
+            TriggerMoment();
+    }
+
+    void TriggerMoment()
+    {
+        switch (momentType)
+        {
+            case MomentType.FlashImage:
+                HorrorUI.Instance.FlashImage(horrorSprite);
+                break;
+
+            case MomentType.BlackFlash:
+                HorrorUI.Instance.BlackFlash();
+                break;
+
+            case MomentType.Narration:
+                HorrorUI.Instance.ShowNarration(narrationText);
+                break;
+
+            case MomentType.SoundOnly:
+                HorrorAudio.Instance.PlayAndFade(horrorSound);
+                break;
+
+            case MomentType.Combined:
+                // ทำทุกอย่างพร้อมกัน
+                if (horrorSprite) HorrorUI.Instance.FlashImage(horrorSprite);
+                if (horrorSound) HorrorAudio.Instance.PlaySound(horrorSound, soundVolume);
+                if (!string.IsNullOrEmpty(narrationText))
+                    HorrorUI.Instance.ShowNarration(narrationText);
+                break;
+        }
+    }
+}
