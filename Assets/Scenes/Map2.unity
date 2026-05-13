@@ -32017,7 +32017,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -48495,13 +48495,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 188452, guid: d7d8e22151be996469034e45a07bb6e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2023920118}
   m_SourcePrefab: {fileID: 100100000, guid: d7d8e22151be996469034e45a07bb6e9, type: 3}
 --- !u!4 &2023920116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 460470, guid: d7d8e22151be996469034e45a07bb6e9, type: 3}
   m_PrefabInstance: {fileID: 2023920115}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2023920117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 188452, guid: d7d8e22151be996469034e45a07bb6e9, type: 3}
+  m_PrefabInstance: {fileID: 2023920115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023920118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023920117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da5c35e573886b429bbac9bfc2fe500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Map_3_C
+  interactPrompt: {fileID: 1609022958}
 --- !u!43 &2024233459
 Mesh:
   m_ObjectHideFlags: 0
