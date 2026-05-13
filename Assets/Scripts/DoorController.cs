@@ -6,7 +6,8 @@ public class DoorController : MonoBehaviour
     private Animator animator;
     private bool isOpen = false;
     private bool playerNearby = false;
-    public bool isUnlocked = false;      // ? เพิ่ม
+    public bool isUnlocked = false;     
+    public GameObject interactPrompt;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class DoorController : MonoBehaviour
         {
             if (!isUnlocked)
             {
-                // เปิด UI กรอกรหัสแทน
+              
                 PasswordUI.Instance.OpenKeypad(this);
             }
             else
@@ -39,7 +40,11 @@ public class DoorController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) playerNearby = true;
+        if (other.CompareTag("Player"))
+        {
+            playerNearby = true;
+            if (interactPrompt) interactPrompt.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other)
@@ -47,7 +52,8 @@ public class DoorController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = false;
+            if (interactPrompt) interactPrompt.SetActive(false);
             PasswordUI.Instance.CloseKeypad();
         }
     }
-}
+    }

@@ -8,10 +8,10 @@ public class PasswordUI : MonoBehaviour
     public static PasswordUI Instance;
 
     public GameObject keypadPanel;
-    public TextMeshProUGUI inputDisplay;   // แสดงตัวเลขที่กด
-    public TextMeshProUGUI errorText;      // "รหัสผิด"
+    public TextMeshProUGUI inputDisplay;   
+    public TextMeshProUGUI errorText;      
 
-    public string correctPassword = "4711"; // รหัสที่ถูกต้อง
+    public string correctPassword = "4711"; 
 
     private string currentInput = "";
     private DoorController targetDoor;
@@ -42,7 +42,6 @@ public class PasswordUI : MonoBehaviour
         Cursor.visible = false;
     }
 
-    // ปุ่มตัวเลข 0-9 กดเรียกฟังก์ชันนี้
     public void PressNumber(string number)
     {
         if (currentInput.Length >= 4) return;
@@ -50,7 +49,6 @@ public class PasswordUI : MonoBehaviour
         inputDisplay.text = new string('*', currentInput.Length); // แสดงเป็น ****
     }
 
-    // ปุ่ม Confirm
     public void PressConfirm()
     {
         if (currentInput == correctPassword)
@@ -66,7 +64,6 @@ public class PasswordUI : MonoBehaviour
         }
     }
 
-    // ปุ่ม Clear
     public void PressClear()
     {
         currentInput = "";

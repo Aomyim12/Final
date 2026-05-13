@@ -17,7 +17,6 @@ public class HorrorAudio : MonoBehaviour
         audioSource.PlayOneShot(clip, volume);
     }
 
-    // เล่นเสียงแล้วค่อย ๆ หาย
     public void PlayAndFade(AudioClip clip, float duration = 2f)
     {
         StartCoroutine(DoPlayAndFade(clip, duration));
