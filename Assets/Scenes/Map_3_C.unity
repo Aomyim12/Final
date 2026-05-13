@@ -2313,6 +2313,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1603781884122738350, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1645048768}
     - target: {fileID: 1870063192158261680, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
       propertyPath: m_Name
       value: Canvas
