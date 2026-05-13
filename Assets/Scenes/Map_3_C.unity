@@ -284,6 +284,79 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &3677331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3677334}
+  - component: {fileID: 3677333}
+  - component: {fileID: 3677332}
+  m_Layer: 0
+  m_Name: ghot (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &3677332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42a6f56636a123499a3e44783c7d474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentType: 4
+  horrorSprite: {fileID: 21300000, guid: d5920a8a74e4dcc4a856665c3d89d3c2, type: 3}
+  horrorSound: {fileID: 8300000, guid: 1863f4d8b9ed5074baca3d74e93b8e8f, type: 3}
+  soundVolume: 30
+  narrationText: "\u0E40_\u0E35\u0E49\u0E22"
+  triggerOnce: 1
+  delayBeforeTrigger: 0
+--- !u!65 &3677333
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 3, z: 1}
+  m_Center: {x: 0.5, y: 1, z: 0}
+--- !u!4 &3677334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677331}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -29.400002, y: 1.6000001, z: 22.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &7082798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5467406339670750962, guid: 9c96b128b01f8d14488d1819f299ea11, type: 3}
@@ -9848,8 +9921,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   momentType: 4
   horrorSprite: {fileID: 21300000, guid: 445dd3008b02f8e47a17db1f4ed3be1f, type: 3}
-  horrorSound: {fileID: 0}
-  soundVolume: 1
+  horrorSound: {fileID: 8300000, guid: aa559546210cd04429e190f246d03ad5, type: 3}
+  soundVolume: 30
   narrationText: 
   triggerOnce: 1
   delayBeforeTrigger: 0
@@ -22945,6 +23018,79 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2931521759849194444, guid: cf7f8689b29375e4487580028b1c73d1, type: 3}
   m_PrefabInstance: {fileID: 1395376077}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1404326404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1404326407}
+  - component: {fileID: 1404326406}
+  - component: {fileID: 1404326405}
+  m_Layer: 0
+  m_Name: ghot (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1404326405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404326404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d42a6f56636a123499a3e44783c7d474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  momentType: 3
+  horrorSprite: {fileID: 21300000, guid: d5920a8a74e4dcc4a856665c3d89d3c2, type: 3}
+  horrorSound: {fileID: 8300000, guid: c58958508d096ac4eb3732a141637cd4, type: 3}
+  soundVolume: 30
+  narrationText: "\u0E40_\u0E35\u0E49\u0E22"
+  triggerOnce: 1
+  delayBeforeTrigger: 0
+--- !u!65 &1404326406
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404326404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 3, z: 7}
+  m_Center: {x: 0.5, y: 1.0000002, z: 3}
+--- !u!4 &1404326407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404326404}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
+  m_LocalPosition: {x: -12.000002, y: 1.6000001, z: 22.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1411796684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34445,6 +34591,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 139876680}
   - {fileID: 533772391}
+  - {fileID: 3677334}
+  - {fileID: 1404326407}
   - {fileID: 381293312}
   - {fileID: 1587382975}
   - {fileID: 1280311214}
