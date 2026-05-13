@@ -85,7 +85,7 @@ public class EndingManager : MonoBehaviour
     }
 
     // ===== ENDING A — รับพร =====
-    void StartEndingA()
+    public void StartEndingA()
     {
         choicePanel.SetActive(false);
         StartCoroutine(PlayEndingA());
@@ -128,7 +128,7 @@ public class EndingManager : MonoBehaviour
     }
 
     // ===== ENDING B — ปฏิเสธ =====
-    void StartEndingB()
+    public void StartEndingB()
     {
         choicePanel.SetActive(false);
         StartCoroutine(PlayEndingB());

@@ -11,5 +11,7 @@ public class EndingTrigger : MonoBehaviour
 
         triggered = true;
         EndingManager.Instance.StartEnding();
+
     }
+
 }

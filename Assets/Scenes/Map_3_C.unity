@@ -5032,7 +5032,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &244117113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10256,9 +10256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42a6f56636a123499a3e44783c7d474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  momentType: 4
+  momentType: 0
   horrorSprite: {fileID: 21300000, guid: 445dd3008b02f8e47a17db1f4ed3be1f, type: 3}
-  horrorSound: {fileID: 8300000, guid: aa559546210cd04429e190f246d03ad5, type: 3}
+  horrorSound: {fileID: 0}
   soundVolume: 8
   narrationText: 
   triggerOnce: 1
@@ -15139,7 +15139,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 842405740}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363339006}
+        m_TargetAssemblyTypeName: EndingManager, Assembly-CSharp
+        m_MethodName: StartEndingA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &842405740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17187,7 +17199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 941318497}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363339006}
+        m_TargetAssemblyTypeName: EndingManager, Assembly-CSharp
+        m_MethodName: StartEndingB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &941318497
 MonoBehaviour:
   m_ObjectHideFlags: 0
