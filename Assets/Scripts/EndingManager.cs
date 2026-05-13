@@ -80,6 +80,9 @@ public class EndingManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
+        blackOverlay.raycastTarget = false;
+        underwaterOverlay.raycastTarget = false;
+
         acceptButton.onClick.AddListener(StartEndingA);
         refuseButton.onClick.AddListener(StartEndingB);
     }
