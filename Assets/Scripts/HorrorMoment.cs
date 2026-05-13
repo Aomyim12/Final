@@ -49,26 +49,31 @@ public class HorrorMoment : MonoBehaviour
         switch (momentType)
         {
             case MomentType.FlashImage:
-                HorrorUI.Instance.FlashImage(horrorSprite);
+                if (HorrorUI.Instance != null)
+                    HorrorUI.Instance.FlashImage(horrorSprite);
                 break;
 
             case MomentType.BlackFlash:
-                HorrorUI.Instance.BlackFlash();
+                if (HorrorUI.Instance != null)
+                    HorrorUI.Instance.BlackFlash();
                 break;
 
             case MomentType.Narration:
-                HorrorUI.Instance.ShowNarration(narrationText);
+                if (HorrorUI.Instance != null)
+                    HorrorUI.Instance.ShowNarration(narrationText);
                 break;
 
             case MomentType.SoundOnly:
-                HorrorAudio.Instance.PlayAndFade(horrorSound);
+                if (HorrorAudio.Instance != null)
+                    HorrorAudio.Instance.PlayAndFade(horrorSound);
                 break;
 
             case MomentType.Combined:
-                // ทำทุกอย่างพร้อมกัน
-                if (horrorSprite) HorrorUI.Instance.FlashImage(horrorSprite);
-                if (horrorSound) HorrorAudio.Instance.PlaySound(horrorSound, soundVolume);
-                if (!string.IsNullOrEmpty(narrationText))
+                if (horrorSprite && HorrorUI.Instance != null)
+                    HorrorUI.Instance.FlashImage(horrorSprite);
+                if (horrorSound && HorrorAudio.Instance != null)
+                    HorrorAudio.Instance.PlaySound(horrorSound, soundVolume);
+                if (!string.IsNullOrEmpty(narrationText) && HorrorUI.Instance != null)
                     HorrorUI.Instance.ShowNarration(narrationText);
                 break;
         }
