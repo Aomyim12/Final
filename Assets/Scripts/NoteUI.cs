@@ -29,6 +29,7 @@ public class NoteUI : MonoBehaviour
 
     public void OpenNote(string title, string content)
     {
+        Debug.Log("OpenNote ถูกเรียก");
         titleText.text = title;
         contentText.text = content;
         notePanel.SetActive(true);
