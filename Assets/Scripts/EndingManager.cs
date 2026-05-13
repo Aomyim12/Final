@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -8,24 +8,24 @@ public class EndingManager : MonoBehaviour
 {
     public static EndingManager Instance;
 
-    [Header("UI �ҡ�ش����")]
-    public GameObject endingPanel;           // Panel ��ͺ������
-    public TextMeshProUGUI dialogueText;     // ���ٴ���͹ / �ѹ
-    public TextMeshProUGUI speakerText;      // ���ͤ��ٴ
-    public Image blackOverlay;              // ˹�Ҩ��״
-    public Image underwaterOverlay;         // overlay �չ���Թ����
+    [Header("UI ฉากสุดท้าย")]
+    public GameObject endingPanel;           // Panel ครอบทั้งหมด
+    public TextMeshProUGUI dialogueText;     // บทพูดเพื่อน / มัน
+    public TextMeshProUGUI speakerText;      // ชื่อคนพูด
+    public Image blackOverlay;              // หน้าจอมืด
+    public Image underwaterOverlay;         // overlay สีน้ำเงินใต้น้ำ
 
-    [Header("�������͡")]
-    public GameObject choicePanel;          // Panel �����ͧ����
-    public Button acceptButton;             // �Ѻ��
-    public Button refuseButton;             // ����ʸ
+    [Header("ปุ่มเลือก")]
+    public GameObject choicePanel;          // Panel ปุ่มสองปุ่ม
+    public Button acceptButton;             // รับพร
+    public Button refuseButton;             // ปฏิเสธ
 
-    [Header("���§")]
+    [Header("เสียง")]
     public AudioSource audioSource;
-    public AudioClip friendVoice;           // ���§���͹
-    public AudioClip creatureSound;         // ���§ "�ѹ"
-    public AudioClip cryingSound;           // ���§���͹��ͧ��� (Ending B)
-    public AudioClip underwaterAmbience;    // ���§���� (Ending A)
+    public AudioClip friendVoice;           // เสียงเพื่อน
+    public AudioClip creatureSound;         // เสียง "มัน"
+    public AudioClip cryingSound;           // เสียงเพื่อนร้องไห้ (Ending B)
+    public AudioClip underwaterAmbience;    // เสียงใต้น้ำ (Ending A)
 
     void Awake()
     {
@@ -34,7 +34,7 @@ public class EndingManager : MonoBehaviour
         choicePanel.SetActive(false);
     }
 
-    // ����� Ending � ���¡�ҡ Trigger 㹩ҡ
+    // เริ่ม Ending — เรียกจาก Trigger ในฉาก
     public void StartEnding()
     {
         endingPanel.SetActive(true);
@@ -43,46 +43,48 @@ public class EndingManager : MonoBehaviour
 
     IEnumerator PlayEndingSequence()
     {
-        // ˹�Ҩ��״��͹
+        // หน้าจอมืดก่อน
         yield return StartCoroutine(FadeBlack(1f, 0f, 1f));
 
-        // ���͹�ٴ
-        yield return StartCoroutine(ShowDialogue("???", "...���Ҷ֧���������"));
+        // เพื่อนพูด
+        yield return StartCoroutine(ShowDialogue("???", "...เธอมาถึงที่นี่แล้ว"));
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowDialogue("���͹", "�ѹ�������͵���ҩѹ �ѹ�ø������"));
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "ฉันรู้ว่าเธอตามหาฉัน ฉันโกรธเลยล่ะ"));
         yield return new WaitForSeconds(0.5f);
 
-        yield return StartCoroutine(ShowDialogue("���͹", "��ѹ��Ẻ�������... �ѹ���ء���ҧ���ѹ��ͧ���"));
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "แต่ฉันทำแบบนี้เพราะ... มันให้ทุกอย่างที่ฉันต้องการ"));
         yield return new WaitForSeconds(0.5f);
 
-        yield return StartCoroutine(ShowDialogue("���͹", "��е͹���֧���Ңͧ������"));
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "และตอนนี้ถึงเวลาของเธอแล้ว"));
         yield return new WaitForSeconds(1f);
 
-        // ���§ "�ѹ" ��ҡ�
+        // เสียง "มัน" ปรากฏ
         if (creatureSound) audioSource.PlayOneShot(creatureSound);
 
         yield return StartCoroutine(FadeBlack(0f, 0.7f, 2f));
 
-        yield return StartCoroutine(ShowDialogue("???", "...����Ҷ֧���������"));
+        yield return StartCoroutine(ShowDialogue("???", "...เจ้ามาถึงที่นี่แล้ว"));
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowDialogue("???", "��ҵ�ͧ�������Ѻ���͹�ͧ������"));
+        yield return StartCoroutine(ShowDialogue("???", "เจ้าต้องการอยู่กับเพื่อนของเจ้าไหม"));
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowDialogue("???", "�Ѻ�âͧ��� � �����Ҩ�������ѹⴴ������ա����"));
+        yield return StartCoroutine(ShowDialogue("???", "รับพรของข้า — และเจ้าจะไม่มีวันโดดเดี่ยวอีกต่อไป"));
         yield return new WaitForSeconds(1.5f);
 
-        // �ʴ��������͡
+        // แสดงปุ่มเลือก
         dialogueText.text = "";
         speakerText.text = "";
         choicePanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
         acceptButton.onClick.AddListener(StartEndingA);
         refuseButton.onClick.AddListener(StartEndingB);
     }
 
-    // ===== ENDING A � �Ѻ�� =====
+    // ===== ENDING A — รับพร =====
     void StartEndingA()
     {
         choicePanel.SetActive(false);
@@ -91,16 +93,16 @@ public class EndingManager : MonoBehaviour
 
     IEnumerator PlayEndingA()
     {
-        yield return StartCoroutine(ShowDialogue("����Ф���ѡ", "...�ѹ�Ѻ"));
+        yield return StartCoroutine(ShowDialogue("ตัวละครหลัก", "...ฉันรับ"));
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowDialogue("���͹", "�ѹ�������ͨ����͡Ẻ���"));
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "ฉันรู้ว่าเธอจะเลือกแบบนี้"));
         yield return new WaitForSeconds(0.5f);
 
-        yield return StartCoroutine(ShowDialogue("���͹", "�Թ�յ�͹�Ѻ... ��ҹ"));
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "ยินดีต้อนรับ... บ้าน"));
         yield return new WaitForSeconds(2f);
 
-        // Fade �״ �����Դ underwater overlay
+        // Fade มืด แล้วเปิด underwater overlay
         yield return StartCoroutine(FadeBlack(0f, 1f, 2f));
         yield return new WaitForSeconds(1f);
 
@@ -110,22 +112,22 @@ public class EndingManager : MonoBehaviour
             audioSource.Play();
         }
 
-        // ����¹���չ���Թ����
+        // เปลี่ยนเป็นสีน้ำเงินใต้น้ำ
         yield return StartCoroutine(FadeUnderwater(0f, 0.6f, 3f));
         yield return StartCoroutine(FadeBlack(1f, 0f, 3f));
 
-        // ��ͤ����Դ
-        yield return StartCoroutine(ShowDialogue("", "�ʧ�ҡ�š��¹͡���� � ���͹���"));
+        // ข้อความปิด
+        yield return StartCoroutine(ShowDialogue("", "แสงจากโลกภายนอกค่อย ๆ เลือนหาย"));
         yield return new WaitForSeconds(3f);
 
         yield return StartCoroutine(FadeBlack(0f, 1f, 3f));
 
-        // ����
+        // จบเกม
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("Credits"); // ���� MainMenu
+        SceneManager.LoadScene("Credits"); // หรือ MainMenu
     }
 
-    // ===== ENDING B � ����ʸ =====
+    // ===== ENDING B — ปฏิเสธ =====
     void StartEndingB()
     {
         choicePanel.SetActive(false);
@@ -134,34 +136,34 @@ public class EndingManager : MonoBehaviour
 
     IEnumerator PlayEndingB()
     {
-        yield return StartCoroutine(ShowDialogue("����Ф���ѡ", "...�ѹ����ʸ"));
+        yield return StartCoroutine(ShowDialogue("ตัวละครหลัก", "...ฉันปฏิเสธ"));
         yield return new WaitForSeconds(1f);
 
-        // ���͹�дش
-        yield return StartCoroutine(ShowDialogue("���͹", "..."));
+        // เพื่อนสะดุด
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "..."));
         yield return new WaitForSeconds(2f);
 
-        yield return StartCoroutine(ShowDialogue("���͹", "����"));
+        yield return StartCoroutine(ShowDialogue("เพื่อน", "ทำไม"));
         yield return new WaitForSeconds(1f);
 
-        yield return StartCoroutine(ShowDialogue("����Ф���ѡ", "���Щѹ�ѧ�繵���ͧ"));
+        yield return StartCoroutine(ShowDialogue("ตัวละครหลัก", "เพราะฉันยังเป็นตัวเอง"));
         yield return new WaitForSeconds(2f);
 
-        // Fade �״
+        // Fade มืด
         yield return StartCoroutine(FadeBlack(0f, 1f, 3f));
         yield return new WaitForSeconds(1f);
 
-        // ���Թ���§��ͧ���㹤����״
+        // ได้ยินเสียงร้องไห้ในความมืด
         if (cryingSound) audioSource.PlayOneShot(cryingSound);
 
         dialogueText.text = "...";
         speakerText.text = "";
         yield return new WaitForSeconds(3f);
 
-        yield return StartCoroutine(ShowDialogue("", "㹤����״ �ѧ���Թ���§���͹��ͧ���"));
+        yield return StartCoroutine(ShowDialogue("", "ในความมืด ยังได้ยินเสียงเพื่อนร้องไห้"));
         yield return new WaitForSeconds(4f);
 
-        // ����
+        // จบเกม
         SceneManager.LoadScene("Credits");
     }
 
@@ -172,7 +174,7 @@ public class EndingManager : MonoBehaviour
         speakerText.text = speaker;
         dialogueText.text = "";
 
-        // �������е��
+        // พิมพ์ทีละตัว
         foreach (char c in dialogue)
         {
             dialogueText.text += c;
