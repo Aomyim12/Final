@@ -53,7 +53,8 @@ public class DoorController : MonoBehaviour
         {
             playerNearby = false;
             if (interactPrompt) interactPrompt.SetActive(false);
-            PasswordUI.Instance.CloseKeypad();
+            if (PasswordUI.Instance != null)
+                PasswordUI.Instance.CloseKeypad();
         }
     }
     }
