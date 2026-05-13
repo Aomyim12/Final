@@ -2407,7 +2407,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8039641783939787379, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 244117113}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1870063192158261680, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 363339006}
   m_SourcePrefab: {fileID: 100100000, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
 --- !u!1 &139876681 stripped
 GameObject:
@@ -7288,11 +7291,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 454940, guid: ab1d1bd8e5dd10b42bf2bca680cefaf2, type: 3}
   m_PrefabInstance: {fileID: 356486122}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &363338997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1870063192158261680, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
+  m_PrefabInstance: {fileID: 139876680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &363338998 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8039641783939787379, guid: 02894f5b58022fa418a44a88383966d1, type: 3}
   m_PrefabInstance: {fileID: 139876680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &363339006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363338997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03dfaa389e034154586e4a79cd732819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endingPanel: {fileID: 244117112}
+  dialogueText: {fileID: 1525192455}
+  speakerText: {fileID: 2075722910}
+  blackOverlay: {fileID: 281154524}
+  underwaterOverlay: {fileID: 2033637855}
+  choicePanel: {fileID: 966398201}
+  acceptButton: {fileID: 842405739}
+  refuseButton: {fileID: 941318496}
+  audioSource: {fileID: 1645048768}
+  friendVoice: {fileID: 8300000, guid: 2212029806cb6824bbb89fcd7f7d2dd0, type: 3}
+  creatureSound: {fileID: 8300000, guid: 184a5f128fa91c74290b5de10a8e2e7d, type: 3}
+  cryingSound: {fileID: 8300000, guid: 92a30c4fb79fe934d9df71c8d7474a2b, type: 3}
+  underwaterAmbience: {fileID: 8300000, guid: 2212029806cb6824bbb89fcd7f7d2dd0, type: 3}
 --- !u!1 &368312129
 GameObject:
   m_ObjectHideFlags: 0
