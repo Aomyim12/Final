@@ -1,31 +1,31 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
 
 public class HorrorMoment : MonoBehaviour
 {
-    [Header("ª√–‡¿∑ Moment")]
+    [Header("‡∏õ‡∏£‡∏∞‡πÄ‡∏†‡∏ó Moment")]
     public MomentType momentType;
 
     public enum MomentType
     {
-        FlashImage,      // ·ø≈™¿“æ
-        BlackFlash,      // ÀπÈ“®Õ¡◊¥«Ÿ∫
-        Narration,       // ¢ÈÕ§«“¡„π„®
-        SoundOnly,       // ‡ ’¬ßÕ¬Ë“ß‡¥’¬«
-        Combined         // À≈“¬Õ¬Ë“ßæ√ÈÕ¡°—π
+        FlashImage,      // ‡πÅ‡∏ü‡∏•‡∏ä‡∏†‡∏≤‡∏û
+        BlackFlash,      // ‡∏´‡∏ô‡πâ‡∏≤‡∏à‡∏≠‡∏°‡∏∑‡∏î‡∏ß‡∏π‡∏ö
+        Narration,       // ‡∏Ç‡πâ‡∏≠‡∏Ñ‡∏ß‡∏≤‡∏°‡πÉ‡∏ô‡πÉ‡∏à
+        SoundOnly,       // ‡πÄ‡∏™‡∏µ‡∏¢‡∏á‡∏≠‡∏¢‡πà‡∏≤‡∏á‡πÄ‡∏î‡∏µ‡∏¢‡∏ß
+        Combined         // ‡∏´‡∏•‡∏≤‡∏¢‡∏≠‡∏¢‡πà‡∏≤‡∏á‡∏û‡∏£‡πâ‡∏≠‡∏°‡∏Å‡∏±‡∏ô
     }
 
-    [Header("¿“æ")]
+    [Header("‡∏†‡∏≤‡∏û")]
     public Sprite horrorSprite;
 
-    [Header("‡ ’¬ß")]
+    [Header("‡πÄ‡∏™‡∏µ‡∏¢‡∏á")]
     public AudioClip horrorSound;
     public float soundVolume = 1f;
 
-    [Header("¢ÈÕ§«“¡")]
+    [Header("‡∏Ç‡πâ‡∏≠‡∏Ñ‡∏ß‡∏≤‡∏°")]
     [TextArea(3, 6)]
     public string narrationText;
 
-    [Header("µ—«‡≈◊Õ°")]
+    [Header("‡∏ï‡∏±‡∏ß‡πÄ‡∏•‡∏∑‡∏≠‡∏Å")]
     public bool triggerOnce = true;     
     public float delayBeforeTrigger = 0f; 
 
