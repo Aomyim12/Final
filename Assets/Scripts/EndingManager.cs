@@ -32,6 +32,9 @@ public class EndingManager : MonoBehaviour
         Instance = this;
         endingPanel.SetActive(false);
         choicePanel.SetActive(false);
+
+        acceptButton.onClick.AddListener(StartEndingA);
+        refuseButton.onClick.AddListener(StartEndingB);
     }
 
     // เริ่ม Ending — เรียกจาก Trigger ในฉาก
@@ -83,8 +86,7 @@ public class EndingManager : MonoBehaviour
         blackOverlay.raycastTarget = false;
         underwaterOverlay.raycastTarget = false;
 
-        acceptButton.onClick.AddListener(StartEndingA);
-        refuseButton.onClick.AddListener(StartEndingB);
+        
     }
 
     // ===== ENDING A — รับพร =====
