@@ -6,10 +6,10 @@ public class NoteUI : MonoBehaviour
 {
     public static NoteUI Instance;
 
-    public GameObject notePanel;         // Panel อ่านโน้ต
+    public GameObject notePanel;         
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI contentText;
-    public GameObject prompt;            // Text "กด E เพื่ออ่าน"
+    public GameObject prompt;            
     public Button closeButton;
 
     void Awake()
@@ -22,7 +22,7 @@ public class NoteUI : MonoBehaviour
 
     void Update()
     {
-        // กด E หรือ ESC เพื่อปิด
+ 
         if (notePanel.activeSelf && Input.GetKeyDown(KeyCode.E))
             CloseNote();
     }
@@ -33,11 +33,17 @@ public class NoteUI : MonoBehaviour
         contentText.text = content;
         notePanel.SetActive(true);
         prompt.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void CloseNote()
     {
         notePanel.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void ShowPrompt(bool show)

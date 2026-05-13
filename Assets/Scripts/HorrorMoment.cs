@@ -26,8 +26,8 @@ public class HorrorMoment : MonoBehaviour
     public string narrationText;
 
     [Header("ตัวเลือก")]
-    public bool triggerOnce = true;     // ทำงานครั้งเดียว
-    public float delayBeforeTrigger = 0f; // หน่วงเวลาก่อน trigger
+    public bool triggerOnce = true;     
+    public float delayBeforeTrigger = 0f; 
 
     private bool hasTriggered = false;
 

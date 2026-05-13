@@ -3,9 +3,9 @@ using UnityEngine;
 public class NoteInteract : MonoBehaviour
 {
     [TextArea(5, 20)]
-    public string noteContent;   // พิมพ์เนื้อหาโน้ตตรงนี้เลย
+    public string noteContent;   
 
-    public string noteTitle;     // ชื่อโน้ต
+    public string noteTitle;    
 
     private bool playerNearby = false;
 
@@ -22,7 +22,7 @@ public class NoteInteract : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
-            NoteUI.Instance.ShowPrompt(true);  // แสดง "กด E เพื่ออ่าน"
+            NoteUI.Instance.ShowPrompt(true);  
         }
     }
 

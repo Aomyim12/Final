@@ -8,11 +8,11 @@ public class HorrorUI : MonoBehaviour
     public static HorrorUI Instance;
 
     [Header("Flash Image — ภาพที่แฟลชแล้วหาย")]
-    public Image flashImage;             // Image แสดงภาพสยอง
-    public float flashDuration = 0.15f;  // นานแค่ไหน (วินาที)
+    public Image flashImage;             
+    public float flashDuration = 0.15f;  
 
     [Header("Overlay — หน้าจอมืดกะทันหัน")]
-    public Image blackOverlay;           // Image สีดำ
+    public Image blackOverlay;           
 
     [Header("Narration — ข้อความบรรยาย")]
     public TextMeshProUGUI narrationText;
@@ -41,7 +41,6 @@ public class HorrorUI : MonoBehaviour
 
         yield return new WaitForSeconds(flashDuration);
 
-        // Fade ออก
         float t = 0;
         while (t < 0.3f)
         {
@@ -92,7 +91,7 @@ public class HorrorUI : MonoBehaviour
         narrationText.gameObject.SetActive(true);
         narrationText.color = new Color(1, 1, 1, 0);
 
-        // Fade in
+        
         float t = 0;
         while (t < 0.5f)
         {
@@ -103,7 +102,7 @@ public class HorrorUI : MonoBehaviour
 
         yield return new WaitForSeconds(narrationDuration);
 
-        // Fade out
+        
         t = 0;
         while (t < 1f)
         {
